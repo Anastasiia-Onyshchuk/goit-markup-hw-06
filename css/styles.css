@@ -670,14 +670,20 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: var(--secondary-bcg-color);
     cursor: pointer;
+
 }
 
 .cross {
     transform: translate(-50%, -50%);
     position: absolute;
     fill: #000000;
+    transition: fill 250ms var(--time-distribution-function);
 }
-
+.cross:hover,
+.cross:focus{
+    fill: var(--hover-color);
+    outline: none;
+}
 /* Form */
 .contact-form{
 
@@ -686,13 +692,14 @@ body {
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px ;
             width: 100%;
+            height: 40px;
             padding: 11px 12px 11px 32px;
 }
 .form-input:not(:last-child){
-margin-bottom: 10px;
+/* margin-bottom: 10px; */
 }
 .form-input:last-child{
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 .form-input:focus{
     border-color: var(--hover-color);
@@ -729,12 +736,16 @@ margin-bottom: 20px;
 
 .form-control{
     position: relative;
+margin-bottom: 10px;
+}
+.form-control:last-child{
+    margin-bottom: 20px;
 }
 
 .form-icon{
     position: absolute;
-    top: 40%;
-    transform: translateY(-40%);
+    top: 50%;
+    transform: translateY(-50%);
     left: 12px;
     fill: var(--secondary-text-color);
 }
@@ -749,6 +760,10 @@ margin-bottom: 20px;
     position: relative;
     bottom: 0;
     right: 0;
+    font-weight: 400;
+        font-size: 14px;
+        line-height: 1.7;
+        letter-spacing: 0.03em;
 }
 
 .icon{
@@ -776,20 +791,13 @@ border-color: transparent;
     appearance: none;
     
 }
-.checkbox-text{
-font-size: 10px;
-    line-height: 1.71;
-    letter-spacing: 0.03em;
-    color: var(--primary-text-color);
-    font-weight: 400;
-    white-space: nowrap;
-}
+
 .checkbox-text-link{
 font-weight: 400;
 font-size: 14px;
 line-height: 1.71;
 letter-spacing: 0.03em;
-text-decoration: underline;
+text-decoration-line: underline;
 color: var(--hover-color);
 }
 
@@ -859,10 +867,12 @@ margin-top: 30px;
 
 .footer-nav {
     margin-top: 0;
+    
 }
 
 .footer-nav:not(:last-child) {
     margin-bottom: 9px;
+ white-space: nowrap;
 }
 
 .footer .map {
@@ -963,6 +973,7 @@ margin-top: 30px;
         border-radius: 4px;
         background-color: transparent;
         padding: 15px 16px;
+        width: 358px;
 }
 .footer-form-input::placeholder{
     color: var(--placeholder-color);
@@ -983,8 +994,7 @@ color: var(--secondary-bcg-color) ;
         letter-spacing: 0.06em;
         color: var(--secondary-bcg-color);
 }
-.footer-send-icon{
-}
+
 
 /* Portfolio */
 
